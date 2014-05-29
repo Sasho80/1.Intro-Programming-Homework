@@ -1,18 +1,22 @@
+
 using System;
 
 class LongSequence
 {
     static void Main()
     {
+        Console.BufferHeight = 1001;
         for (int i = 2; i <= 1000; i++)
         {
             if (i % 2 == 0)
             {
-                Console.Write(i + ",");
+                //Console.Write(i + ",");
+                Console.Write(i.ToString().PadLeft(6));
             }
             else
             {
-                Console.Write(i * (-1) + ",");
+                //Console.Write(i * (-1) + ",");
+                Console.WriteLine((-i).ToString().PadLeft(6));
             }
         }
         Console.WriteLine();
