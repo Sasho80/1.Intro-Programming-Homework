@@ -1,0 +1,12 @@
+using System;
+
+class FindingRoot
+{
+    static void Main()
+    {
+        int numInt = 12345;
+        double numResult=Math.Sqrt(numInt);
+        Console.WriteLine(numResult);
+    }
+}
+
