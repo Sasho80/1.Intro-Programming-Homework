@@ -1,0 +1,13 @@
+using System;
+
+class PrintName
+{
+    static void Main()
+    {
+        string firstName = "Aleksandar";
+        string lastName = "Todorov";
+        object fullName=firstName+" "+lastName;
+        Console.WriteLine(fullName);
+    }
+}
+
