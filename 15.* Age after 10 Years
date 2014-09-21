@@ -1,34 +1,37 @@
 using System;
 using System.Globalization;
-
-class Age
+class AgeAfter10Years
 {
     static void Main()
     {
-        DateTime now = DateTime.Now;
-        Console.WriteLine("Enter your year in format d.MM.yyyy:");
-        string BirthDay = Console.ReadLine();
-        DateTime BirthDayDT =DateTime.Parse(BirthDay);
-        int AgeNow = Math.Abs(DateTime.Now.Year-BirthDayDT.Year);
-        if (DateTime.Now.Month > BirthDayDT.Month)
+        Console.WriteLine("Enter your year of Birth:");
+        string yearBirth =Console.ReadLine();
+        string format = "yyyy";
+        DateTime dateTime;
+        int myBirthYear = int.Parse(yearBirth);
+        if (DateTime.TryParseExact(yearBirth, format, CultureInfo.InvariantCulture,
+            DateTimeStyles.None, out dateTime))
         {
-           AgeNow=AgeNow + 1;
-        }
-        else if (DateTime.Now.Month<BirthDayDT.Month)
-        {
-            if (DateTime.Now.Day < BirthDayDT.Day || DateTime.Now.Day > BirthDayDT.Day)
+            DateTime today = DateTime.Now;
+            if (today.Year<=myBirthYear)
             {
-               AgeNow = AgeNow - 1; 
+                myBirthYear--; 
             }
+            int myYearsNow = today.Year - myBirthYear;
+
+            // add the 10 years to today's date
+            DateTime future = today.AddYears(10);
+
+            // add your year to future
+            DateTime futurYear = future.AddYears(myYearsNow);
+
+            // now subtract them to get your age in 10 years from now 
+            int fa = futurYear.Year - today.Year;
+
+            Console.WriteLine("Your age now: {0}",myYearsNow);
+            Console.WriteLine("\nIn 10 years you will be:");
+            Console.WriteLine(fa);
         }
-        //else if (DateTime.Now.Month == BirthDayDT.Month)
-        //{
-        //    if (DateTime.Now.Day == BirthDayDT.Day)
-        //    {
-        //    }
-        //}
-        int AgeAfterTenYears = AgeNow + 10;
-        Console.WriteLine("{0}" , AgeNow);
-        Console.WriteLine("{0}" , AgeAfterTenYears);
     }
 }
+
