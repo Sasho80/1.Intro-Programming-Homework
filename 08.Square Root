@@ -1,12 +1,9 @@
 using System;
 
-class FindingRoot
+class SquareRoot
 {
     static void Main()
     {
-        int numInt = 12345;
-        double numResult=Math.Sqrt(numInt);
-        Console.WriteLine(numResult);
+        Console.WriteLine("{0}",Math.Sqrt(12345));
     }
 }
-
