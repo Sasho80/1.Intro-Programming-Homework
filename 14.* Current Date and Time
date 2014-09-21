@@ -1,11 +1,12 @@
 using System;
 
-class DateAndTime
+class CurrentDateAndTime
 {
     static void Main()
     {
-        DateTime now = DateTime.Now;
-        Console.WriteLine(now);
+        DateTime time = DateTime.Now;             
+        string format = "d.MM.yyyy ddd  HH:mm";    
+        Console.WriteLine(time.ToString(format));  
     }
 }
 
