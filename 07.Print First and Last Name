@@ -1,13 +1,15 @@
 using System;
 
-class PrintName
+class PrintFirstAndLastName
 {
     static void Main()
     {
-        string firstName = "Aleksandar";
-        string lastName = "Todorov";
-        object fullName=firstName+" "+lastName;
-        Console.WriteLine(fullName);
+        Console.WriteLine("Enter your first name:");
+        string firstName = Console.ReadLine();
+        Console.WriteLine("Enter your last name:");
+        string LastName = Console.ReadLine();
+        Console.WriteLine(firstName);
+        Console.WriteLine(LastName);
     }
 }
 
