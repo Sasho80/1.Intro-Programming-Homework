@@ -1,11 +1,9 @@
 using System;
 
-class HelloCSharp
+class PrintMyName
 {
     static void Main()
     {
-        Console.WriteLine("Hello C#!");
+        Console.WriteLine("Aleksandar");
     }
 }
-
-
